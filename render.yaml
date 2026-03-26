@@ -3,20 +3,21 @@ services:
     name: astro-mvp
     env: node
     region: oregon
-    plan: free
+    plan: starter
+    branch: main
     buildCommand: npm install && npm run build
     startCommand: npm start
     healthCheckPath: /
     envVars:
       - key: NODE_VERSION
-        value: 20
+        value: "20"
       - key: NEXT_PUBLIC_SUPABASE_URL
-        sync: false
+        value: https://akryacotozlzjwnjluuy.supabase.co
       - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
-        sync: false
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFrcnlhY290b3psemp3bmpsdXV5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI5Njg2OTUsImV4cCI6MjA1ODU0NDY5NX0.5_ZZxQKqNZvQlq9PZVFfQVfP9Hfp8xdE0S6wXGtL_2Q
       - key: SUPABASE_SERVICE_ROLE_KEY
-        sync: false
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFrcnlhY290b3psemp3bmpsdXV5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0Mjk2ODY5NSwiZXhwIjoyMDU4NTQ0Njk1fQ.sX5C_Cp0MBGaOBK-t3Jt_y9u6bR0Ql9zqXWFPg7_YM
       - key: DASHSCOPE_API_KEY
-        sync: false
+        value: sk-sp-b65486ff779540da86e4566fd090f0f9
       - key: DASHSCOPE_BASE_URL
         value: https://coding-intl.dashscope.aliyuncs.com/v1

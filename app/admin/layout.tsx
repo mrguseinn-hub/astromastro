@@ -1,4 +1,3 @@
-import { redirect } from 'next/navigation';
 import { getAdminUser } from '@/lib/auth/admin-auth';
 import { AdminNav } from './AdminNav';
 
@@ -9,10 +8,17 @@ export default async function AdminLayout({
 }) {
   const adminUser = await getAdminUser();
 
+  // Not authenticated - show login page content
   if (!adminUser) {
-    redirect('/admin/login');
+    // If trying to access protected routes, redirect to login
+    return (
+      <main className="min-h-screen" style={{ background: 'var(--background)' }}>
+        {children}
+      </main>
+    );
   }
 
+  // Authenticated - show full admin layout
   return (
     <div className="min-h-screen flex">
       {/* Sidebar */}

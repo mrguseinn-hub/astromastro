@@ -280,7 +280,7 @@ export function InterpretationsList({ initialInterpretations, entities }: Props)
                     <h3 className="font-medium">{interp.name}</h3>
                   </div>
                   <p className="text-sm mt-1" style={{ color: 'var(--muted)' }}>
-                    {interp.description.substring(0, 100)}...
+                    {(interp.description || '').substring(0, 100)}...
                   </p>
                 </div>
                 <div className="flex gap-2">
